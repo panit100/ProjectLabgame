@@ -1,0 +1,12 @@
+1. git add -A  =  เพิ่มทุกไฟล์
+2. git status = เช็คว่ายังไม่ได้เพิ่มไฟล์ไหน
+3. git commit -m "ข้อความ" = ยืนยันการเพิ่มไฟล์
+4. git remote add origin https://github.com/panit100/ProjectLabgame.git  =  เชื่อมกับ repositories บน Github
+5. git push origin master = เอาไฟล์ทั้งหมดขึ้น Githb ("master" คือชื่อ Branch) สามารถเปลี่ยนได้
+
+พื้นฐานที่น่าจะได้ใช้
+
+ถ้าไม่เข้าใจหรือหาโค้ตอื่น
+https://www.borntodev.com/2020/03/30/git-พื้นฐานสุดๆ/?fbclid=IwAR0vfjLAT0z8imLCX7uD4hEPrtpw08CchF9YvlqWjuc8GSEOjOid9-VWHQI
+
+
