@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
         }
     }
 
+    //You can change How to TakeDamge here
+    //May have to do in another script
     public void TakeDamage(int Damage){
         CurrentHealth -= Damage;
     }

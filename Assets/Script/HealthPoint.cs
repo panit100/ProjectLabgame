@@ -19,7 +19,7 @@ public class HealthPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //Change HP Text
         HealthPointText.text = "HP : " + player.CurrentHealth;
     }
 
