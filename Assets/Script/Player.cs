@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     public int CurrentHealth;
     public int CurrentArmor;
 
-    public float DelayTime = 2;
+    public float TimeisAttack = 2;
     public float CurrentTime;
 
     public bool isAttack = false;
@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
         CurrentArmor = MaxArmor;
         armorBar.SetMaxArmor(MaxArmor);
 
-        CurrentTime = DelayTime;
+        CurrentTime = TimeisAttack;
 
         isAttack = true;
     }
@@ -36,17 +36,22 @@ public class Player : MonoBehaviour
     void Update()
     {
         if(CurrentTime <= 0){
-            CurrentTime = DelayTime;
+            CurrentTime = TimeisAttack;
             isAttack = true;
         }else
         CurrentTime -= Time.deltaTime;
 
-        if(Input.GetKeyDown(KeyCode.Space)){
+    }
+
+    void OnCollisionStay(Collision other)
+    {
+        if(other.gameObject.tag == "Enemy"){
             if(isAttack){
             TakeDamage(10);
             isAttack = false;
+            CurrentTime = TimeisAttack;
             }
-        }
+        }        
     }
 
     //You can change How to TakeDamge here
