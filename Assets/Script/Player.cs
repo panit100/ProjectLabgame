@@ -11,6 +11,10 @@ public class Player : MonoBehaviour
     public int CurrentHealth;
     public int CurrentArmor;
 
+    public float DelayTime = 2;
+    public float CurrentTime;
+
+    public bool isAttack = false;
     public HealthBar healthBar;
     public ArmorBar armorBar;
 
@@ -22,13 +26,26 @@ public class Player : MonoBehaviour
 
         CurrentArmor = MaxArmor;
         armorBar.SetMaxArmor(MaxArmor);
+
+        CurrentTime = DelayTime;
+
+        isAttack = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(CurrentTime <= 0){
+            CurrentTime = DelayTime;
+            isAttack = true;
+        }else
+        CurrentTime -= Time.deltaTime;
+
         if(Input.GetKeyDown(KeyCode.Space)){
+            if(isAttack){
             TakeDamage(10);
+            isAttack = false;
+            }
         }
     }
 
