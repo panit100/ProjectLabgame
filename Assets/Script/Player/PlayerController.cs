@@ -28,7 +28,6 @@ public class PlayerController : MonoBehaviour
         move(h,v);
 
         Turning();
-        movement = Vector3.zero;
 
     }
 

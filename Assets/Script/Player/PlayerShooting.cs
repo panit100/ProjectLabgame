@@ -20,11 +20,10 @@ public class PlayerShooting : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         timer += Time.deltaTime;
         if(Input.GetButton("Fire1") && timer >= timeBetweenBullets && Time.timeScale != 0){
-            Debug.Log("Click");
             shoot();
         }
     }
@@ -36,7 +35,12 @@ public class PlayerShooting : MonoBehaviour
         shootRay.direction = transform.forward;
 
         if(Physics.Raycast (shootRay,out shootHit,range,shootableMask)){
-            Debug.Log("hit");
+            
+            EnemyHealth enemyHealth = shootHit.collider.GetComponent<EnemyHealth>();
+
+            if(shootHit.collider != null){
+                enemyHealth.TakeDamage(damagePerShot);
+            }
         }
     }
 
