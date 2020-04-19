@@ -6,7 +6,7 @@ public class PlayerShooting : MonoBehaviour
 {
     public int damagePerShot = 20;
     public float timeBetweenBullets = 0.15f;
-    public float range = 10f;
+    public float range = 100f;
 
     int shootableMask;
     float timer;
@@ -16,6 +16,7 @@ public class PlayerShooting : MonoBehaviour
     void Start()
     {
         shootableMask = LayerMask.GetMask("Shootable");
+        
     }
 
     // Update is called once per frame
