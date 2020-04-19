@@ -17,6 +17,8 @@ public class PlayerHealth : MonoBehaviour
     public HealthBar healthBar;
     public ArmorBar armorBar;
 
+    public PlayerController playerController;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +42,8 @@ public class PlayerHealth : MonoBehaviour
         }else
         CurrentTime -= Time.deltaTime;
 
+        Death(CurrentHealth);
+        
     }
 
     void OnCollisionStay(Collision other)
@@ -63,5 +67,11 @@ public class PlayerHealth : MonoBehaviour
 
         healthBar.SetHealth(CurrentHealth);
         armorBar.SetArmor(CurrentArmor);
+    }
+
+    void Death(float health){
+        if(health<= 0){
+            playerController.enabled = false;
+        }
     }
 }
