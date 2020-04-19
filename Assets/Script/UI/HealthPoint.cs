@@ -8,7 +8,7 @@ public class HealthPoint : MonoBehaviour
 {
 
     private TextMeshProUGUI HealthPointText;
-    public Player player;
+    public PlayerHealth playerHealth;
 
 
     void Start()
@@ -20,7 +20,7 @@ public class HealthPoint : MonoBehaviour
     void Update()
     {
         //Change HP Text
-        HealthPointText.text = "HP : " + player.CurrentHealth;
+        HealthPointText.text = "HP : " + playerHealth.CurrentHealth;
     }
 
 

@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
-
-    public int MaxHealth = 100;
+   public int MaxHealth = 100;
 
     public int MaxArmor = 100;
     public int CurrentHealth;
