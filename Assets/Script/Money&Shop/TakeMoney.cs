@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Money : MonoBehaviour
+public class TakeMoney : MonoBehaviour
 {
-    public TakeMoney takeMoney;
+    public PlayerMoney playerMoney;
 
+    
 
     void OnTriggerEnter(Collider other)
     {
@@ -16,9 +17,6 @@ public class Money : MonoBehaviour
     }
 
     public void addPlayerMoney(int addAmount){
-        takeMoney.Playermoney += addAmount;
+        playerMoney.money += addAmount;
     }
-
-    
-    
 }
