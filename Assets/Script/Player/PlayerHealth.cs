@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -19,9 +20,13 @@ public class PlayerHealth : MonoBehaviour
 
     public PlayerController playerController;
 
+    private int currentScene;
+
     // Start is called before the first frame update
     void Start()
     {
+        Scene scene = SceneManager.GetActiveScene();
+        
         CurrentHealth = MaxHealth;
         healthBar.SetMaxHealth(MaxHealth);
 
@@ -31,6 +36,8 @@ public class PlayerHealth : MonoBehaviour
         CurrentTime = TimeisAttack;
 
         isAttack = true;
+        
+        currentScene = scene.buildIndex;
     }
 
     // Update is called once per frame
@@ -72,6 +79,7 @@ public class PlayerHealth : MonoBehaviour
     void Death(float health){
         if(health<= 0){
             playerController.enabled = false;
+            SceneManager.LoadScene(currentScene);
         }
     }
 }
