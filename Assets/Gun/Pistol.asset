@@ -18,3 +18,6 @@ MonoBehaviour:
   fireRate: 0.5
   damage: 10
   range: 5
+  currentAmmo: -2
+  maxAmmo: 6
+  TimetoReload: 2

@@ -11,6 +11,9 @@ public class WeaponObject : ScriptableObject{
     public float fireRate = .0f;
     public int damage = 0;
     public float range = 0;
+    public int currentAmmo = 0;
+    public int maxAmmo = 0;
+    public float TimetoReload = 0;
     
 }
 

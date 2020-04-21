@@ -19,6 +19,7 @@ public class PlayerShooting : MonoBehaviour
     public Light faceLight;
     float effectDisplayTime = 0.2f;
     public int currentWeapon = 0;
+    public int currentAmmo = 6;
 
 
     void Awake()
@@ -49,6 +50,10 @@ public class PlayerShooting : MonoBehaviour
     {
 
         timer += Time.deltaTime;
+
+        if(Input.GetKeyDown(KeyCode.R)){
+            StartCoroutine(Reload(weapons[currentWeapon].TimetoReload,weapons[currentWeapon].maxAmmo));
+        }
         if(Input.GetButton("Fire1") && timer >= weapons[currentWeapon].fireRate && Time.timeScale != 0){
             shoot();
         }
@@ -65,6 +70,11 @@ public class PlayerShooting : MonoBehaviour
     }
 
     void shoot(){
+        if(currentAmmo <= 0){
+            StartCoroutine(Reload(weapons[currentWeapon].TimetoReload,weapons[currentWeapon].maxAmmo));
+            return;
+        }
+
         timer = 0;
 
         gunLight.enabled = true;
@@ -91,9 +101,16 @@ public class PlayerShooting : MonoBehaviour
         else{
             gunLine.SetPosition(1,shootRay.origin+shootRay.direction * weapons[currentWeapon].range);
         }
+
+        currentAmmo -= 1;
+
+        if(currentAmmo <= 0){
+            StartCoroutine(Reload(weapons[currentWeapon].TimetoReload,weapons[currentWeapon].maxAmmo));
+            return;
+        }
     }
 
-    void SetWeapon(ref int currentWeapon){
+    public void SetWeapon(ref int currentWeapon){
         int holdWeapons = weapons.Length;
         holdWeapons -= 1;
 
@@ -103,6 +120,7 @@ public class PlayerShooting : MonoBehaviour
             }else{
                 currentWeapon -= 1;
             }
+            currentAmmo = weapons[currentWeapon].maxAmmo;
         }
 
         if(Input.GetKeyDown(KeyCode.E)){
@@ -111,7 +129,17 @@ public class PlayerShooting : MonoBehaviour
             }else{
                 currentWeapon += 1;
             }
+            currentAmmo = weapons[currentWeapon].maxAmmo;
         }
+
+    }
+
+    IEnumerator Reload(float TimetoReload,int Ammo){
+        currentAmmo = 0;
+        yield return new WaitForSecondsRealtime(TimetoReload);
+        if(currentAmmo == 0)
+        currentAmmo += Ammo;
+        
 
     }
 }
