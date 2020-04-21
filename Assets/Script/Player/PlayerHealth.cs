@@ -11,7 +11,7 @@ public class PlayerHealth : MonoBehaviour
     public int CurrentHealth;
     public int CurrentArmor;
 
-    public float TimeisAttack = 2;
+    public float TimeisAttack = 0.5f;
     public float CurrentTime;
 
     public bool isAttack = false;
