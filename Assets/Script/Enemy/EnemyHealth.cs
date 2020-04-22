@@ -7,10 +7,13 @@ public class EnemyHealth : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public GameObject moneyPrefab;
+    public EnemyHealthBar enemyHealthBar;
 
     void Start()
     {
+
         currentHealth = maxHealth;
+        enemyHealthBar.SetMaxHealth(maxHealth);
     }
 
     void Update()
@@ -22,7 +25,7 @@ public class EnemyHealth : MonoBehaviour
 
         currentHealth -= amount;
 
-        
+        enemyHealthBar.SetHealth(currentHealth);
 
         if(currentHealth <= 0){
             Death();    
