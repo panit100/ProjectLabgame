@@ -112,6 +112,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  moneyPrefab: {fileID: 25787656355895062, guid: 94c609db2dea05a4faf23a27991f0152,
+    type: 3}
 --- !u!54 &788345713749968158
 Rigidbody:
   m_ObjectHideFlags: 0
