@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-   public int MaxHealth = 100;
+    public GameObject[] enemyObject;
+    EnemyHealth enemyHealth;
+    public int MaxHealth = 100;
 
     public int MaxArmor = 100;
     public int CurrentHealth;
@@ -38,6 +40,7 @@ public class PlayerHealth : MonoBehaviour
         isAttack = true;
         
         currentScene = scene.buildIndex;
+
     }
 
     // Update is called once per frame
@@ -49,6 +52,8 @@ public class PlayerHealth : MonoBehaviour
         }else
         CurrentTime -= Time.deltaTime;
 
+        HpandArmorBar(CurrentArmor,CurrentHealth);
+
         Death(CurrentHealth);
         
     }
@@ -57,7 +62,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if(other.gameObject.tag == "Enemy"){
             if(isAttack){
-            TakeDamage(10);
+            other.gameObject.GetComponent<EnemyHealth>().Attack();
             isAttack = false;
             CurrentTime = TimeisAttack;
             }
@@ -66,11 +71,7 @@ public class PlayerHealth : MonoBehaviour
 
     //You can change How to TakeDamge here
     //May have to do in another script
-    public void TakeDamage(int Damage){
-
-        if(CurrentArmor <= 0){
-        CurrentHealth -= Damage;}
-        else{CurrentArmor -= Damage;}
+    public void HpandArmorBar(int CurrentArmor,int CurrentHealth){
 
         healthBar.SetHealth(CurrentHealth);
         armorBar.SetArmor(CurrentArmor);
@@ -82,4 +83,5 @@ public class PlayerHealth : MonoBehaviour
             SceneManager.LoadScene(currentScene);
         }
     }
+    
 }

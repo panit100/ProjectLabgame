@@ -2,16 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class EnemyHealth : MonoBehaviour 
 {
     public int maxHealth = 100;
     public int currentHealth;
-    public GameObject moneyPrefab;
+    public int Damage = 5;
+    public GameObject moneyObject;
     public EnemyHealthBar enemyHealthBar;
+    GameObject player;
+    PlayerHealth playerHealth;
 
     void Start()
     {
-
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerHealth = player.GetComponent<PlayerHealth>();
         currentHealth = maxHealth;
         enemyHealthBar.SetMaxHealth(maxHealth);
     }
@@ -40,6 +44,12 @@ public class EnemyHealth : MonoBehaviour
     private void DropMoney(){
         int isDrop = Random.Range(1,5);
         if(isDrop == 1)
-        Instantiate(moneyPrefab,transform.position,moneyPrefab.transform.rotation);
+        Instantiate(moneyObject,transform.position,moneyObject.transform.rotation);
+    }
+
+    public void Attack(){
+        if(playerHealth.CurrentArmor <= 0){
+        playerHealth.CurrentHealth -= Damage;}
+        else{playerHealth.CurrentArmor -= Damage;}
     }
 }

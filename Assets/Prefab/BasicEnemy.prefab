@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 788345713749968156}
   - component: {fileID: 788345713749968157}
   m_Layer: 9
-  m_Name: Enemy
+  m_Name: BasicEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,7 +113,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
-  moneyPrefab: {fileID: 25787656355895062, guid: 94c609db2dea05a4faf23a27991f0152,
+  Damage: 5
+  moneyObject: {fileID: 25787656355895062, guid: 94c609db2dea05a4faf23a27991f0152,
     type: 3}
   enemyHealthBar: {fileID: 501501611}
 --- !u!54 &788345713749968158

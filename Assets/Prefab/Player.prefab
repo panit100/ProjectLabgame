@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5660571170467899936}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.014269918, y: 0.029999971, z: 0.67078114}
+  m_LocalPosition: {x: 0.014269918, y: 0.029999971, z: 0.344}
   m_LocalScale: {x: 0.12539, y: 0.098992, z: 0.65412}
   m_Children: []
   m_Father: {fileID: 5660571172103043388}
@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 5660571171586024466}
   - component: {fileID: 5660571171586024465}
   - component: {fileID: 5660571172103043781}
+  - component: {fileID: 7410730723872631545}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -189,7 +190,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.54
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -234,6 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e4a1456c7bbd84a99b3cd7b7374fe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyObject: []
   MaxHealth: 100
   MaxArmor: 100
   CurrentHealth: 0
@@ -257,6 +259,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: 0
+--- !u!65 &7410730723872631545
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5660571171586024471}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3161622, y: 0.29093462, z: 0.94106364}
+  m_Center: {x: -0.00016860664, y: 0.0037818253, z: 0.39556038}
 --- !u!1 &8018872224857841461
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8018872224857841461}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.014269829, y: 0.029999971, z: 1.051}
+  m_LocalPosition: {x: 0.014269829, y: 0.029999971, z: 0.847}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5660571172103043388}
@@ -307,6 +322,10 @@ MonoBehaviour:
   damagePerShot: 20
   timeBetweenBullets: 0.15
   range: 100
+  weapons: []
+  faceLight: {fileID: 0}
+  currentWeapon: 0
+  currentAmmo: 6
 --- !u!198 &7326527422378130587
 ParticleSystem:
   m_ObjectHideFlags: 0
