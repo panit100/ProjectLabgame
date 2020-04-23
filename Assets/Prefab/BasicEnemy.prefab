@@ -111,9 +111,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d30b43e6c4b0eb441bd6fd185c53959c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 50
   currentHealth: 0
-  Damage: 5
+  Damage: 3
   moneyObject: {fileID: 25787656355895062, guid: 94c609db2dea05a4faf23a27991f0152,
     type: 3}
   enemyHealthBar: {fileID: 501501611}

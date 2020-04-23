@@ -20,6 +20,7 @@ public class PlayerShooting : MonoBehaviour
     float effectDisplayTime = 0.2f;
     public int currentWeapon = 0;
     public int currentAmmo = 6;
+    public bool isReloading = false;
 
 
     void Awake()
@@ -31,10 +32,6 @@ public class PlayerShooting : MonoBehaviour
         gunLight = GetComponent<Light>();
     }
 
-    //public void SetWeapon(int weaponChoice){
-    //    currentWeapon = weaponChoice;
-    //}
-
     private void SetColors(Color color){
         faceLight.color = color;
         gunLine.material.color = color;
@@ -44,22 +41,23 @@ public class PlayerShooting : MonoBehaviour
 
     void Update()
     {
-        SetWeapon(ref currentWeapon);
+        SetWeapon(ref currentWeapon);   
     }
     void FixedUpdate()
     {
-
         timer += Time.deltaTime;
 
-        if(Input.GetKeyDown(KeyCode.R)){
-            StartCoroutine(Reload(weapons[currentWeapon].TimetoReload,weapons[currentWeapon].maxAmmo));
-        }
         if(Input.GetButton("Fire1") && timer >= weapons[currentWeapon].fireRate && Time.timeScale != 0){
             shoot();
         }
 
         if(timer >= weapons[currentWeapon].fireRate * effectDisplayTime){
             DisableEffects();    
+        }
+
+        if(Input.GetKeyDown(KeyCode.R)){
+            StartCoroutine(Reload());
+            return;
         }
     }
 
@@ -70,11 +68,14 @@ public class PlayerShooting : MonoBehaviour
     }
 
     void shoot(){
+        if(isReloading)
+        return;
+
         if(currentAmmo <= 0){
-            StartCoroutine(Reload(weapons[currentWeapon].TimetoReload,weapons[currentWeapon].maxAmmo));
+            StartCoroutine(Reload());
             return;
         }
-
+    
         timer = 0;
 
         gunLight.enabled = true;
@@ -101,13 +102,8 @@ public class PlayerShooting : MonoBehaviour
         else{
             gunLine.SetPosition(1,shootRay.origin+shootRay.direction * weapons[currentWeapon].range);
         }
-
-        currentAmmo -= 1;
-
-        if(currentAmmo <= 0){
-            StartCoroutine(Reload(weapons[currentWeapon].TimetoReload,weapons[currentWeapon].maxAmmo));
-            return;
-        }
+        currentAmmo --;
+        
     }
 
     public void SetWeapon(ref int currentWeapon){
@@ -132,14 +128,13 @@ public class PlayerShooting : MonoBehaviour
             currentAmmo = weapons[currentWeapon].maxAmmo;
         }
 
+        isReloading = false;
     }
 
-    IEnumerator Reload(float TimetoReload,int Ammo){
-        currentAmmo = 0;
-        yield return new WaitForSecondsRealtime(TimetoReload);
-        if(currentAmmo == 0)
-        currentAmmo += Ammo;
-        
-
+    IEnumerator Reload(){
+        isReloading = true;
+        yield return new WaitForSecondsRealtime(weapons[currentWeapon].TimetoReload);
+        currentAmmo = weapons[currentWeapon].maxAmmo;
+        isReloading = false;
     }
 }
