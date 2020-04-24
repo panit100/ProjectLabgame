@@ -3,18 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class PlayerMoneyUI : MonoBehaviour
+public class PlayerMoneyUI : PlayerMoney
 {
     private TextMeshProUGUI PlayerMoneyText;
-    public PlayerMoney playerMoney;
-
-    
-    void Start()
+    void Awake()
     {
         PlayerMoneyText = GetComponent<TextMeshProUGUI>();        
     }
 
     private void Update() {
-        PlayerMoneyText.text = "$ : " + playerMoney.money;    
+        PlayerMoneyText.text = "$ : " + money;    
     }
 }
