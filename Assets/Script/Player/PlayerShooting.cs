@@ -19,9 +19,8 @@ public class PlayerShooting : MonoBehaviour
     public Light faceLight;
     float effectDisplayTime = 0.2f;
     public int currentWeapon = 0;
-    public int currentAmmo = 6;
     public bool isReloading = false;
-
+    Coroutine reloadAmmo;
 
     void Awake()
     {
@@ -39,9 +38,34 @@ public class PlayerShooting : MonoBehaviour
         gunParticles.startColor = color;
     }
 
+    void Start()
+    {
+
+        foreach(WeaponObject weapon in weapons){
+            weapon.currentAmmo = weapon.maxAmmo; 
+        }        
+
+
+    }
+
     void Update()
     {
-        SetWeapon(ref currentWeapon);   
+        if(Input.GetKeyDown(KeyCode.R)){
+            Debug.Log("Check");
+            reloadAmmo = StartCoroutine(Reload());
+            return;
+        }
+
+        if(isReloading){
+        if(Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.E)){
+            Debug.Log("Check");
+            StopCoroutine(reloadAmmo);
+        }else
+            return;
+          
+        }
+
+        SetWeapon(ref currentWeapon); 
     }
     void FixedUpdate()
     {
@@ -53,11 +77,6 @@ public class PlayerShooting : MonoBehaviour
 
         if(timer >= weapons[currentWeapon].fireRate * effectDisplayTime){
             DisableEffects();    
-        }
-
-        if(Input.GetKeyDown(KeyCode.R)){
-            StartCoroutine(Reload());
-            return;
         }
     }
 
@@ -71,8 +90,8 @@ public class PlayerShooting : MonoBehaviour
         if(isReloading)
         return;
 
-        if(currentAmmo <= 0){
-            StartCoroutine(Reload());
+        if(weapons[currentWeapon].currentAmmo <= 0){
+            reloadAmmo = StartCoroutine(Reload());
             return;
         }
     
@@ -102,13 +121,15 @@ public class PlayerShooting : MonoBehaviour
         else{
             gunLine.SetPosition(1,shootRay.origin+shootRay.direction * weapons[currentWeapon].range);
         }
-        currentAmmo --;
-        
+        //currentAmmo --;
+        weapons[currentWeapon].currentAmmo--;
     }
 
     public void SetWeapon(ref int currentWeapon){
         int holdWeapons = weapons.Length;
-        holdWeapons -= 1;
+        holdWeapons --;
+
+        
 
         if(Input.GetKeyDown(KeyCode.Q)){
             if(currentWeapon == 0){
@@ -116,7 +137,6 @@ public class PlayerShooting : MonoBehaviour
             }else{
                 currentWeapon -= 1;
             }
-            currentAmmo = weapons[currentWeapon].maxAmmo;
         }
 
         if(Input.GetKeyDown(KeyCode.E)){
@@ -125,7 +145,6 @@ public class PlayerShooting : MonoBehaviour
             }else{
                 currentWeapon += 1;
             }
-            currentAmmo = weapons[currentWeapon].maxAmmo;
         }
 
         isReloading = false;
@@ -134,7 +153,7 @@ public class PlayerShooting : MonoBehaviour
     IEnumerator Reload(){
         isReloading = true;
         yield return new WaitForSecondsRealtime(weapons[currentWeapon].TimetoReload);
-        currentAmmo = weapons[currentWeapon].maxAmmo;
+        weapons[currentWeapon].currentAmmo = weapons[currentWeapon].maxAmmo;
         isReloading = false;
     }
 }
