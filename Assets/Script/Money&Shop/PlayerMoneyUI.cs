@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class PlayerMoneyUI : PlayerMoney
+public class PlayerMoneyUI : MonoBehaviour
 {
-    private TextMeshProUGUI PlayerMoneyText;
+    TextMeshProUGUI PlayerMoneyText;
+    PlayerMoney playerMoney;
     void Awake()
     {
         PlayerMoneyText = GetComponent<TextMeshProUGUI>();        
+        playerMoney = GameObject.Find("Player").GetComponent<PlayerMoney>();
+
     }
 
     private void Update() {
-        PlayerMoneyText.text = "$ : " + money;    
+        PlayerMoneyText.text = "$ : " + playerMoney.money;    
     }
 }
