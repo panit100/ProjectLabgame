@@ -21,6 +21,7 @@ public class PlayerShooting : MonoBehaviour
     public int currentWeapon = 0;
     public bool isReloading = false;
     Coroutine reloadAmmo;
+    public GameObject ReloadUI;
 
     void Awake()
     {
@@ -45,20 +46,17 @@ public class PlayerShooting : MonoBehaviour
             weapon.currentAmmo = weapon.maxAmmo; 
         }        
 
-
     }
 
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.R)){
-            Debug.Log("Check");
             reloadAmmo = StartCoroutine(Reload());
             return;
         }
 
         if(isReloading){
         if(Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.E)){
-            Debug.Log("Check");
             StopCoroutine(reloadAmmo);
         }else
             return;
@@ -154,8 +152,11 @@ public class PlayerShooting : MonoBehaviour
 
     IEnumerator Reload(){
         isReloading = true;
+        ReloadUI.SetActive(true);
         yield return new WaitForSecondsRealtime(weapons[currentWeapon].TimetoReload);
         weapons[currentWeapon].currentAmmo = weapons[currentWeapon].maxAmmo;
         isReloading = false;
+        ReloadUI.SetActive(false);
+
     }
 }

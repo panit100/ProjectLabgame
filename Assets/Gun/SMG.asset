@@ -15,10 +15,10 @@ MonoBehaviour:
   weaponName: SMG
   cost: 0
   description: SMG or Submachine Gun.High fireRate but low Damage.
-  sprite: {fileID: 21300000, guid: 7cc7e8782590dd74c9e7bf32bcfead06, type: 3}
+  sprite: {fileID: 21300024, guid: 0bd96f6f4899f644ea1ffd9b4735a5e6, type: 3}
   fireRate: 0.1
   damage: 15
   range: 12
-  currentAmmo: 21
+  currentAmmo: 30
   maxAmmo: 30
   TimetoReload: 1.5
