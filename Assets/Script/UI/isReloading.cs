@@ -6,8 +6,6 @@ using TMPro;
 public class isReloading : MonoBehaviour
 {
     TextMeshProUGUI ReloadingText;
-    PlayerShooting playerShooting;
-
     public float speed = 5f;
     
 
@@ -15,20 +13,15 @@ public class isReloading : MonoBehaviour
     void Start()
     {
         ReloadingText = GetComponent<TextMeshProUGUI>();
-        playerShooting = GameObject.Find("Player/GunBarralEnd").GetComponent<PlayerShooting>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        //FadeText();
+    }    
+
+    void FadeText(){
         ReloadingText.color = new Color(0,0,0,Mathf.Sin(Time.time * speed));
-
-        if(playerShooting.isReloading){
-            gameObject.SetActive(true);
-
-        }else {
-            gameObject.SetActive(false);
-        }
 
     }
 }
