@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 
     Vector3 movement;
     Rigidbody playerRigidbody;
-
+    Animator animator;
     int floorMask; // the layer that player mouse must be on it
     float camRayLength = 100f; 
 
@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     {
         floorMask = LayerMask.GetMask("Floor"); // reference the layer
         playerRigidbody = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -26,7 +27,7 @@ public class PlayerController : MonoBehaviour
         float v = Input.GetAxisRaw("Vertical");
 
         move(h,v);
-
+        anim();
         Turning();
 
     }
@@ -37,6 +38,15 @@ public class PlayerController : MonoBehaviour
         movement = movement.normalized * speed * Time.deltaTime;
         playerRigidbody.MovePosition(transform.position + movement);
     }
+
+    void anim(){
+        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S)){
+            animator.SetBool("isWalk",true);
+        }else{
+            animator.SetBool("isWalk",false);
+        }
+    }
+
 
     // character will turning follow player mouse But player mouse must on a floor layer
     void Turning(){

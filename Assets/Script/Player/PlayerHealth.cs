@@ -15,18 +15,16 @@ public class PlayerHealth : MonoBehaviour
 
     public float TimeisAttack = 0.5f;
     public float CurrentTime;
-
+    public float restartDelay = 2f;
     public bool isAttack = false;
     public HealthBar healthBar;
     public ArmorBar armorBar;
-
+    Animator animator;
     public PlayerController playerController;
 
-    private int currentScene;
-
-    // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         Scene scene = SceneManager.GetActiveScene();
         
         CurrentHealth = MaxHealth;
@@ -38,9 +36,6 @@ public class PlayerHealth : MonoBehaviour
         CurrentTime = TimeisAttack;
 
         isAttack = true;
-        
-        currentScene = scene.buildIndex;
-
     }
 
     // Update is called once per frame
@@ -80,8 +75,13 @@ public class PlayerHealth : MonoBehaviour
     void Death(float health){
         if(health<= 0){
             playerController.enabled = false;
-            SceneManager.LoadScene(currentScene);
+            animator.SetBool("isDying",true);
+            Invoke("Restart",restartDelay);
         }
     }
-    
+
+    void Restart(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
 }
