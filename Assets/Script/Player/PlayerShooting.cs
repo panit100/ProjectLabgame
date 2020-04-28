@@ -28,16 +28,16 @@ public class PlayerShooting : MonoBehaviour
         shootableMask = LayerMask.GetMask("Shootable");
         
         gunParticles = GetComponent<ParticleSystem>();
-        //gunLine = GetComponent<LineRenderer>();
+        gunLine = GetComponent<LineRenderer>();
         gunLight = GetComponent<Light>();
     }
 
-    private void SetColors(Color color){
+    /* private void SetColors(Color color){
         faceLight.color = color;
-        //gunLine.material.color = color;
+        gunLine.material.color = color;
         gunLight.color = color;
         gunParticles.startColor = color;
-    }
+    } */
 
     void Start()
     {
@@ -79,7 +79,7 @@ public class PlayerShooting : MonoBehaviour
     }
 
     public void DisableEffects(){
-        //gunLine.enabled = false;
+        gunLine.enabled = false;
         faceLight.enabled = false;
         gunLight.enabled = false;
     }
@@ -101,8 +101,8 @@ public class PlayerShooting : MonoBehaviour
         gunParticles.Stop();
         gunParticles.Play();
 
-        //gunLine.enabled = true;
-        //gunLine.SetPosition(0,transform.position);
+        gunLine.enabled = true;
+        gunLine.SetPosition(0,transform.position);
 
         shootRay.origin = transform.position;
         shootRay.direction = transform.forward;
@@ -114,12 +114,11 @@ public class PlayerShooting : MonoBehaviour
             if(shootHit.collider != null){
                 enemyHealth.TakeDamage(weapons[currentWeapon].damage);
             }
-            //gunLine.SetPosition(1,shootHit.point);
-        }else{
+            gunLine.SetPosition(1,shootHit.point);
         }
-        //else{
-            //gunLine.SetPosition(1,shootRay.origin+shootRay.direction * weapons[currentWeapon].range);
-        //}
+        else{
+            gunLine.SetPosition(1,shootRay.origin+shootRay.direction * weapons[currentWeapon].range);
+        }
         weapons[currentWeapon].currentAmmo--;
     }
 
