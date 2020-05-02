@@ -12,7 +12,7 @@ public class nameOfGun : MonoBehaviour
     void Awake()
     {
         gunName = GetComponent<TextMeshProUGUI>();
-        playerShooting = GameObject.Find("Player/GunBarralEnd").GetComponent<PlayerShooting>();
+        playerShooting = GameObject.Find("Player/Gun/GunBarralEnd").GetComponent<PlayerShooting>();
     }
 
     void Update()

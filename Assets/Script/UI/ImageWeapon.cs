@@ -7,10 +7,10 @@ using UnityEngine.UI;
 public class ImageWeapon : MonoBehaviour
 {
     Image weaponImage;
-    PlayerShooting playerShooting;
-
+    //PlayerShooting playerShooting;
+    public PlayerShooting playerShooting;
     private void Awake() {
-        playerShooting = GameObject.Find("Player/GunBarralEnd").GetComponent<PlayerShooting>();
+        //playerShooting = GameObject.Find("Player/Gun/GunBarralEnd").GetComponent<PlayerShooting>();
         weaponImage = GetComponent<Image>();
 
     }

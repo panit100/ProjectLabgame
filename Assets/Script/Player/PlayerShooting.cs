@@ -131,6 +131,7 @@ public class PlayerShooting : MonoBehaviour
         
 
         if(Input.GetKeyDown(KeyCode.Q)){
+            ReloadUI.SetActive(false);
             if(currentWeapon == 0){
                 currentWeapon = holdWeapons;
             }else{
@@ -139,6 +140,7 @@ public class PlayerShooting : MonoBehaviour
         }
 
         if(Input.GetKeyDown(KeyCode.E)){
+            ReloadUI.SetActive(false);
             if(currentWeapon == holdWeapons){
                 currentWeapon = 0;
             }else{

@@ -1,59 +1,160 @@
 fileFormatVersion: 2
 guid: 09bb590bef79d144e9f53d800a83bcfe
 ModelImporter:
-  serializedVersion: 19
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: aksu_base
-    100004: aksu_bmag
-    100006: aksu_bmag_end
-    100008: aksu_bullets
-    100010: aksu_fire
-    100012: aksu_fire_end
-    100014: aksu_hips
-    100016: aksu_mag
-    100018: aksu_reload
-    100020: aksu_reload_end
-    100022: aksu_root
-    100024: assault_rifle2_base
-    100026: assault_rifle2_bullets
-    100028: assault_rifle2_hips
-    100030: assault_rifle2_mag
-    400000: //RootNode
-    400002: aksu_base
-    400004: aksu_bmag
-    400006: aksu_bmag_end
-    400008: aksu_bullets
-    400010: aksu_fire
-    400012: aksu_fire_end
-    400014: aksu_hips
-    400016: aksu_mag
-    400018: aksu_reload
-    400020: aksu_reload_end
-    400022: aksu_root
-    400024: assault_rifle2_base
-    400026: assault_rifle2_bullets
-    400028: assault_rifle2_hips
-    400030: assault_rifle2_mag
-    2100000: ColorPick
-    4300000: aksu_base
-    4300002: aksu_mag
-    4300004: aksu_bullets
-    4300006: assault_rifle2_base
-    4300008: assault_rifle2_mag
-    4300010: assault_rifle2_bullets
-    9500000: //RootNode
-    13700000: aksu_base
-    13700002: aksu_bullets
-    13700004: aksu_mag
-    13700006: assault_rifle2_base
-    13700008: assault_rifle2_bullets
-    13700010: assault_rifle2_mag
-    2186277476908879412: ImportLogs
+  serializedVersion: 19300
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: aksu_base
+  - first:
+      1: 100004
+    second: aksu_bmag
+  - first:
+      1: 100006
+    second: aksu_bmag_end
+  - first:
+      1: 100008
+    second: aksu_bullets
+  - first:
+      1: 100010
+    second: aksu_fire
+  - first:
+      1: 100012
+    second: aksu_fire_end
+  - first:
+      1: 100014
+    second: aksu_hips
+  - first:
+      1: 100016
+    second: aksu_mag
+  - first:
+      1: 100018
+    second: aksu_reload
+  - first:
+      1: 100020
+    second: aksu_reload_end
+  - first:
+      1: 100022
+    second: aksu_root
+  - first:
+      1: 100024
+    second: assault_rifle2_base
+  - first:
+      1: 100026
+    second: assault_rifle2_bullets
+  - first:
+      1: 100028
+    second: assault_rifle2_hips
+  - first:
+      1: 100030
+    second: assault_rifle2_mag
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: aksu_base
+  - first:
+      4: 400004
+    second: aksu_bmag
+  - first:
+      4: 400006
+    second: aksu_bmag_end
+  - first:
+      4: 400008
+    second: aksu_bullets
+  - first:
+      4: 400010
+    second: aksu_fire
+  - first:
+      4: 400012
+    second: aksu_fire_end
+  - first:
+      4: 400014
+    second: aksu_hips
+  - first:
+      4: 400016
+    second: aksu_mag
+  - first:
+      4: 400018
+    second: aksu_reload
+  - first:
+      4: 400020
+    second: aksu_reload_end
+  - first:
+      4: 400022
+    second: aksu_root
+  - first:
+      4: 400024
+    second: assault_rifle2_base
+  - first:
+      4: 400026
+    second: assault_rifle2_bullets
+  - first:
+      4: 400028
+    second: assault_rifle2_hips
+  - first:
+      4: 400030
+    second: assault_rifle2_mag
+  - first:
+      21: 2100000
+    second: ColorPick
+  - first:
+      43: 4300000
+    second: aksu_base
+  - first:
+      43: 4300002
+    second: aksu_mag
+  - first:
+      43: 4300004
+    second: aksu_bullets
+  - first:
+      43: 4300006
+    second: assault_rifle2_base
+  - first:
+      43: 4300008
+    second: assault_rifle2_mag
+  - first:
+      43: 4300010
+    second: assault_rifle2_bullets
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: aksu_base
+  - first:
+      137: 13700002
+    second: aksu_bullets
+  - first:
+      137: 13700004
+    second: aksu_mag
+  - first:
+      137: 13700006
+    second: assault_rifle2_base
+  - first:
+      137: 13700008
+    second: assault_rifle2_bullets
+  - first:
+      137: 13700010
+    second: assault_rifle2_mag
+  - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ColorPick
+    second: {fileID: 2100000, guid: 5661d5d4e19a87847853839e09102c7e, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -66,26 +167,39 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 1.5
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
@@ -95,10 +209,14 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 0
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -108,14 +226,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 0.015
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

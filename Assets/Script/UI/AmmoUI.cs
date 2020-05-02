@@ -6,13 +6,13 @@ using TMPro;
 public class AmmoUI : MonoBehaviour
 {
     TextMeshProUGUI ammoText;
-    PlayerShooting playerShooting;
-
+    //PlayerShooting playerShooting;
+    public PlayerShooting playerShooting;
     
     void Awake()
     {
         ammoText = GetComponent<TextMeshProUGUI>();     
-        playerShooting = GameObject.Find("Player/GunBarralEnd").GetComponent<PlayerShooting>();
+        //playerShooting = GameObject.Find("Player/Gun/GunBarralEnd").GetComponent<PlayerShooting>();
     }
 
     private void Update() {
