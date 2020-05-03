@@ -17,8 +17,14 @@ MonoBehaviour:
   description: SniperRifle.Have good on Damage and Range.But have low Fire Rate
   sprite: {fileID: 21300034, guid: 0bd96f6f4899f644ea1ffd9b4735a5e6, type: 3}
   fireRate: 1
-  damage: 30
+  maxFireRate: 1
+  damage: 50
+  maxDamage: 100
   range: 50
+  maxRange: 50
   currentAmmo: 5
   maxAmmo: 5
   TimetoReload: 3
+  maxTimetoReload: 3
+  Level: 1
+  maxLevel: 5

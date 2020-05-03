@@ -11,11 +11,18 @@ public class WeaponObject : ScriptableObject{
     public Sprite sprite;
 
     public float fireRate = .0f;
+    public float maxFireRate = .0f;
     public int damage = 0;
+    public int maxDamage = 0;
     public float range = 0;
+    public float maxRange = 0;
     public int currentAmmo = 0;
     public int maxAmmo = 0;
     public float TimetoReload = 0;
+    public float maxTimetoReload = 0;
+
+    public int Level = 1;
+    public int maxLevel = 5;
     
 }
 
