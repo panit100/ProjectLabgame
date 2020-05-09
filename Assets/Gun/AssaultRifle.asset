@@ -14,17 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: AssaultRifle
   cost: 0
+  startCost: 0
   description: This gun have fast rate of fire ,much Damage and middle range.
   sprite: {fileID: 21300044, guid: 0bd96f6f4899f644ea1ffd9b4735a5e6, type: 3}
   fireRate: 0.25
+  startFireRate: 0.25
   maxFireRate: 1
   damage: 20
+  startDamge: 20
   maxDamage: 50
   range: 15
+  startRange: 15
   maxRange: 35
-  currentAmmo: 24
+  currentAmmo: 30
+  startAmmo: 30
   maxAmmo: 30
   TimetoReload: 2
+  startTimetoReload: 2
   maxTimetoReload: 2
   Level: 1
   maxLevel: 5
