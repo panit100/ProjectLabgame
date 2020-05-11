@@ -19,6 +19,9 @@ public class PlayerMoney : MonoBehaviour
     }
 
     public void addPlayerMoney(int addAmount){
+        if(money >= 999999){
+            money = 999999;
+        }else
         money += addAmount;
     }
 }

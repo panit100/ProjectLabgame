@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Sniper
   m_EditorClassIdentifier: 
   weaponName: Sniper
-  cost: 0
-  startCost: 0
+  cost: 1000
+  startCost: 1000
   description: SniperRifle.Have good on Damage and Range.But have low Fire Rate
   sprite: {fileID: 21300034, guid: 0bd96f6f4899f644ea1ffd9b4735a5e6, type: 3}
   fireRate: 1
   startFireRate: 1
+  minFireRate: 0.5
   maxFireRate: 1
   damage: 50
   startDamge: 50
@@ -31,6 +32,7 @@ MonoBehaviour:
   maxAmmo: 5
   TimetoReload: 3
   startTimetoReload: 3
+  minTimetoReload: 2
   maxTimetoReload: 3
   Level: 1
   maxLevel: 5

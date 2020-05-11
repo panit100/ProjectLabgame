@@ -18,10 +18,18 @@ public class buyButton : MonoBehaviour
     {
         foreach(WeaponObject n in playerShooting.weapons){
             if(upgradeGunUI.Weapon == n){
-            ButtonText.text = "Upgrade";
-            break;}
+                if(upgradeGunUI.Weapon.Level == n.maxLevel){
+                    ButtonText.text = "Max Level";
+                }else
+                ButtonText.text = "Upgrade";
+                break;
+            }
             else
             ButtonText.text = "Unlock";
+
+            
         }
+
+        
     }
 }

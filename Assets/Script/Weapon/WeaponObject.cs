@@ -13,7 +13,7 @@ public class WeaponObject : ScriptableObject{
 
     public float fireRate = .0f;
     public float startFireRate = 0;
-
+    public float minFireRate = 0;
     public float maxFireRate = .0f;
     public int damage = 0;
     public int startDamge = 0;
@@ -26,6 +26,7 @@ public class WeaponObject : ScriptableObject{
     public int maxAmmo = 0;
     public float TimetoReload = 0;
     public float startTimetoReload = 0;
+    public float minTimetoReload = 0;
     public float maxTimetoReload = 0;
 
     public int Level = 1;

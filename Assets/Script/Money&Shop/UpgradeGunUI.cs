@@ -18,6 +18,8 @@ public class UpgradeGunUI : MonoBehaviour
         MaxValueSlider(RangeSlider);
         MaxValueSlider(FireRateSlider);
         MaxValueSlider(ReloadSlider);
+        MinValueSlider(FireRateSlider);
+        MinValueSlider(ReloadSlider);
     }
 
     public void UpdateSlider() {
@@ -55,5 +57,12 @@ public class UpgradeGunUI : MonoBehaviour
         inputSlider.value = Weapon.fireRate;
         if(inputSlider == ReloadSlider)
         inputSlider.value = Weapon.TimetoReload;
+    }
+
+    void MinValueSlider(Slider inputSlider){
+        if(inputSlider == FireRateSlider)
+        inputSlider.minValue = Weapon.minFireRate;
+        if(inputSlider == ReloadSlider)
+        inputSlider.minValue = Weapon.minTimetoReload;
     }
 }

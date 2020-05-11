@@ -8,7 +8,8 @@ public class PlayerShooting : MonoBehaviour
     public float timeBetweenBullets = 0.15f;
     public float range = 100f;
 
-    public WeaponObject[] weapons;
+    //public WeaponObject[] weapons;
+    public List<WeaponObject> weapons = new List<WeaponObject>(); 
     int shootableMask;
     float timer;
     Ray shootRay;
@@ -125,7 +126,7 @@ public class PlayerShooting : MonoBehaviour
     
 
     public void SetWeapon(ref int currentWeapon){
-        int holdWeapons = weapons.Length;
+        int holdWeapons = weapons.Count;
         holdWeapons --;
 
         

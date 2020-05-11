@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: RPG
   m_EditorClassIdentifier: 
   weaponName: RPG
-  cost: 0
-  startCost: 0
+  cost: 5000
+  startCost: 5000
   description: High Damage and Range but low Ammo and Fire Rate
   sprite: {fileID: 21300032, guid: 0bd96f6f4899f644ea1ffd9b4735a5e6, type: 3}
   fireRate: 1
   startFireRate: 1
+  minFireRate: 1
   maxFireRate: 1
   damage: 80
   startDamge: 80
@@ -31,6 +32,7 @@ MonoBehaviour:
   maxAmmo: 1
   TimetoReload: 5
   startTimetoReload: 5
+  minTimetoReload: 3
   maxTimetoReload: 5
   Level: 1
   maxLevel: 5

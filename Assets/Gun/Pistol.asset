@@ -13,24 +13,26 @@ MonoBehaviour:
   m_Name: Pistol
   m_EditorClassIdentifier: 
   weaponName: Pistol
-  cost: 0
-  startCost: 0
+  cost: 100
+  startCost: 100
   description: Pistol is a basic gun.Everyone can use it.Low damage and FireRate.
   sprite: {fileID: 21300028, guid: 0bd96f6f4899f644ea1ffd9b4735a5e6, type: 3}
-  fireRate: 0.45999998
+  fireRate: 0.7
   startFireRate: 0.7
+  minFireRate: 0.2
   maxFireRate: 0.7
-  damage: 27
+  damage: 7
   startDamge: 7
   maxDamage: 30
-  range: 17
+  range: 5
   startRange: 5
   maxRange: 20
-  currentAmmo: 1
+  currentAmmo: 6
   startAmmo: 6
   maxAmmo: 6
-  TimetoReload: 0.3600001
+  TimetoReload: 1
   startTimetoReload: 1
+  minTimetoReload: 0.5
   maxTimetoReload: 1
-  Level: 5
+  Level: 1
   maxLevel: 5
