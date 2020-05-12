@@ -52,12 +52,8 @@ public class PlayerShooting : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.R)){
-            if(weapons[currentWeapon].currentAmmo == weapons[currentWeapon].maxAmmo){
-                return;
-            }else{
             reloadAmmo = StartCoroutine(Reload());
             return;
-            }
         }
 
         if(isReloading){
