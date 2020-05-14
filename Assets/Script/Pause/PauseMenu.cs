@@ -7,12 +7,17 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject PauseMenuUI;
+    public GameObject ShopUI;
  
     void Update()
     {
         
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            if(ShopUI.activeInHierarchy){
+            CloseShop();
+            return;
+            }
             if(Time.timeScale == 1f){
             GameIsPaused = false;
             }
@@ -55,5 +60,9 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("Quitting game...");
         Application.Quit();
+    }
+
+    public void CloseShop(){
+        ShopUI.SetActive(false);
     }
 }
