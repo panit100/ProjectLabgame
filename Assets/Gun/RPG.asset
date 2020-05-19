@@ -17,19 +17,22 @@ MonoBehaviour:
   startCost: 5000
   description: High Damage and Range but low Ammo and Fire Rate
   sprite: {fileID: 21300032, guid: 0bd96f6f4899f644ea1ffd9b4735a5e6, type: 3}
-  fireRate: 1
-  startFireRate: 1
-  minFireRate: 1
-  maxFireRate: 1
-  damage: 80
+  fireRate: 1.5
+  startFireRate: 1.5
+  minFireRate: 1.5
+  maxFireRate: 1.5
+  damage: 100
   startDamge: 80
-  maxDamage: 100
+  maxDamage: 120
+  startMaxDamage: 100
+  UpgradeMaxDamage: 20
   range: 50
   startRange: 50
   maxRange: 50
   currentAmmo: 1
   startAmmo: 1
   maxAmmo: 1
+  UpgradeAmmo: 3
   TimetoReload: 5
   startTimetoReload: 5
   minTimetoReload: 3

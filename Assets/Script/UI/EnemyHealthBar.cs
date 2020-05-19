@@ -9,6 +9,7 @@ public class EnemyHealthBar : MonoBehaviour
     void Update()
     {
         transform.rotation = Quaternion.identity;
+        
     }
 
     public void SetMaxHealth(int health){

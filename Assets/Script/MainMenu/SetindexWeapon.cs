@@ -12,6 +12,7 @@ public class SetindexWeapon : MonoBehaviour
         foreach(WeaponObject n in weaponObjects){
             n.cost = n.startCost;
             n.damage = n.startDamge;
+            n.maxDamage = n.startMaxDamage;
             n.fireRate = n.startFireRate;
             n.range = n.startRange;
             n.TimetoReload = n.startTimetoReload;

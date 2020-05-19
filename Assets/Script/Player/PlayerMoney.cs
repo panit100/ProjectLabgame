@@ -13,15 +13,16 @@ public class PlayerMoney : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Money"){
-            addPlayerMoney(20);
+            int randomDrop = Random.Range(20,50);
+            addPlayerMoney(randomDrop);
             Destroy(other.gameObject);
         }        
     }
 
     public void addPlayerMoney(int addAmount){
+        money += addAmount;
         if(money >= 999999){
             money = 999999;
-        }else
-        money += addAmount;
+        }
     }
 }

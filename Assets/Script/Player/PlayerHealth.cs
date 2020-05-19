@@ -6,13 +6,10 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public GameObject[] enemyObject;
-    EnemyHealth enemyHealth;
     public int MaxHealth = 100;
-
     public int MaxArmor = 100;
     public int CurrentHealth;
     public int CurrentArmor;
-
     public float TimeisAttack = 0.5f;
     public float CurrentTime;
     public float restartDelay = 2f;
@@ -22,6 +19,9 @@ public class PlayerHealth : MonoBehaviour
     Animator animator;
     public PlayerController playerController;
 
+    public bool isRegen = false;
+    public float TimeRegen = 5f;
+    public float CurrentTimeRegen = 0;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -52,11 +52,18 @@ public class PlayerHealth : MonoBehaviour
         Death(CurrentHealth);
         
     }
+    void FixedUpdate()
+    {
+        CurrentTimeRegen += Time.fixedDeltaTime;
+        CombatRegen();
+    }
 
     void OnCollisionStay(Collision other)
     {
         if(other.gameObject.tag == "Enemy"){
             if(isAttack){
+                if(other.gameObject.GetComponent<EnemyHealth>().isDie)
+                {return;}
             other.gameObject.GetComponent<EnemyHealth>().Attack();
             isAttack = false;
             CurrentTime = TimeisAttack;
@@ -75,13 +82,62 @@ public class PlayerHealth : MonoBehaviour
     void Death(float health){
         if(health<= 0){
             playerController.enabled = false;
-            animator.SetBool("isDying",true);
+            animator.SetTrigger("isDying");
             Invoke("Restart",restartDelay);
         }
     }
 
     void Restart(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    void CombatRegen(){
+        if(isRegen){
+
+        if(CurrentTimeRegen >= TimeRegen){
+            if(CurrentHealth == 100){
+                CurrentTimeRegen = 0;
+                return;
+            }else
+            {
+                CurrentHealth += 10;
+                CurrentTimeRegen = 0;
+            }
+        }
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "HP"){
+            if(CurrentHealth == MaxHealth)
+            return;
+            addPlayerHealth(20);
+            Destroy(other.gameObject);
+        }
+
+        if(other.gameObject.tag == "Armor"){
+            if(CurrentArmor == MaxArmor)
+            return;
+            addPlayerArmor(20);
+            Destroy(other.gameObject);
+        }        
+    }
+
+    public void addPlayerHealth(int addAmount){
+        CurrentHealth += addAmount;
+
+        if(CurrentHealth >= MaxHealth){
+            CurrentHealth = MaxHealth;
+        }
+    }
+
+    public void addPlayerArmor(int addAmount){
+        CurrentArmor += addAmount;
+
+        if(CurrentArmor >= MaxArmor){
+            CurrentArmor = MaxArmor;
+        }
     }
 
 }

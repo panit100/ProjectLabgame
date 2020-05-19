@@ -15,7 +15,8 @@ public class UpgradeGunScript : MonoBehaviour
     public float reloadUpgrade = 5;
     public int levelUpgrade = 1;
     public TextMeshProUGUI priceText;
-    bool isUpgrade = false;
+    public bool isUpgrade = false;
+    public bool isBuy = false;
     
     void Update()
     {
@@ -27,7 +28,7 @@ public class UpgradeGunScript : MonoBehaviour
             checkUpgrade();
             if(isUpgrade){
                 Upgrade();
-            }else if(!isUpgrade){
+            }else{
                 Unlock();
             }
         }else
@@ -45,8 +46,9 @@ public class UpgradeGunScript : MonoBehaviour
         }else{
         UpgradeActive();
         calculateMoney();
-        }
         Debug.Log("Succes");
+
+        }
     }
 
     void UpgradeActive(){
@@ -78,6 +80,7 @@ public class UpgradeGunScript : MonoBehaviour
         foreach(WeaponObject n in playerShooting.weapons){
             if(weapon == n){
                 isUpgrade = true;
+                break;
             }else{
                 isUpgrade = false;
             }
@@ -87,7 +90,7 @@ public class UpgradeGunScript : MonoBehaviour
     void Unlock(){
         playerShooting.weapons.Add(weapon);
         calculateMoney();
-
+        
     }
 
     void calculateMoney(){

@@ -18,12 +18,15 @@ public class WeaponObject : ScriptableObject{
     public int damage = 0;
     public int startDamge = 0;
     public int maxDamage = 0;
+    public int startMaxDamage = 0;
+    public int UpgradeMaxDamage = 0;
     public float range = 0;
     public float startRange = 0;
     public float maxRange = 0;
     public int currentAmmo = 0;
     public int startAmmo = 0;
     public int maxAmmo = 0;
+    public int UpgradeAmmo = 0;
     public float TimetoReload = 0;
     public float startTimetoReload = 0;
     public float minTimetoReload = 0;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour 
+public class BossHealth : MonoBehaviour 
 {
     public int maxHealth = 100;
     public int currentHealth;
@@ -51,12 +51,9 @@ public class EnemyHealth : MonoBehaviour
 
     private void Dropitem(){
         int isDrop = Random.Range(1,10);
-        if(isDrop == 1||isDrop == 2||isDrop == 3||isDrop == 4)
         Instantiate(DropObject[0],transform.position,DropObject[0].transform.rotation);
-        if(isDrop == 5)
-        Instantiate(DropObject[1],transform.position,DropObject[1].transform.rotation);    
-        if(isDrop == 6)
-        Instantiate(DropObject[2],transform.position,DropObject[2].transform.rotation);    
+        Instantiate(DropObject[1],new Vector3(transform.position.x,transform.position.y,transform.position.z + 1),DropObject[1].transform.rotation);    
+        Instantiate(DropObject[2],new Vector3(transform.position.x,transform.position.y,transform.position.z - 1),DropObject[2].transform.rotation);    
         
     }
 

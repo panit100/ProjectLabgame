@@ -13,26 +13,29 @@ MonoBehaviour:
   m_Name: AssaultRifle
   m_EditorClassIdentifier: 
   weaponName: AssaultRifle
-  cost: 1300
+  cost: 500
   startCost: 500
   description: This gun have fast rate of fire ,much Damage and middle range.
   sprite: {fileID: 21300044, guid: 0bd96f6f4899f644ea1ffd9b4735a5e6, type: 3}
-  fireRate: 0.05
+  fireRate: 0.25
   startFireRate: 0.25
   minFireRate: 0.05
   maxFireRate: 0.25
-  damage: 50
+  damage: 30
   startDamge: 20
-  maxDamage: 50
-  range: 35
+  maxDamage: 55
+  startMaxDamage: 45
+  UpgradeMaxDamage: 10
+  range: 15
   startRange: 15
   maxRange: 35
   currentAmmo: 30
   startAmmo: 30
   maxAmmo: 30
-  TimetoReload: 1
+  UpgradeAmmo: 60
+  TimetoReload: 2
   startTimetoReload: 2
   minTimetoReload: 1
   maxTimetoReload: 2
-  Level: 5
+  Level: 1
   maxLevel: 5
