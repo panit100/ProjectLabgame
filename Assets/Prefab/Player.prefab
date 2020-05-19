@@ -5675,6 +5675,9 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   armorBar: {fileID: 0}
   playerController: {fileID: 513686887903200871}
+  isRegen: 0
+  TimeRegen: 5
+  CurrentTimeRegen: 0
 --- !u!65 &2469732513694221149
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5686,8 +5689,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.4793172, z: 0.53130865}
-  m_Center: {x: 0, y: 1.2324731, z: -0.02129674}
+  m_Size: {x: 1, y: 4.5029526, z: 1.7679749}
+  m_Center: {x: 0, y: 2.2442908, z: 0.5212693}
 --- !u!1 &513686887806733348
 GameObject:
   m_ObjectHideFlags: 0

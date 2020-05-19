@@ -6,24 +6,25 @@ using UnityEngine.AI;
 public class PathFinding : MonoBehaviour
 {
     public NavMeshAgent agent;
-    Transform Player;
+    GameObject Player;
     EnemyHealth enemyHealth;
 
     void Start()
     {
-        Player = GameObject.FindGameObjectWithTag("Player").transform;
+        Player = GameObject.FindGameObjectWithTag("Player");
         agent = GetComponent<NavMeshAgent>();    
         enemyHealth = GetComponent<EnemyHealth>();        
     }
 
     void Update()
     {
-        if(enemyHealth.currentHealth > 0)
-            agent.SetDestination(Player.transform.position);
-        else
-        {
-            return;
-        }
-       
+        
+            if(enemyHealth.currentHealth > 0)
+                agent.SetDestination(Player.transform.position);
+            else
+            {
+                return;
+            }
+        
     }
 }

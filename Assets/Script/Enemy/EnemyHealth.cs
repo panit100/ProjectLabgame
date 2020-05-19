@@ -31,15 +31,14 @@ public class EnemyHealth : MonoBehaviour
     }
 
     public void TakeDamage(int amount){
-
-        
         currentHealth -= amount;
-
         enemyHealthBar.SetHealth(currentHealth);
 
         if(currentHealth <= 0){
-            isDie = true;
+            if(!isDie)
             enemyAnimator.SetTrigger("Die");
+
+            isDie = true;
             Invoke("Death",3);
         }
     }
@@ -67,4 +66,21 @@ public class EnemyHealth : MonoBehaviour
         else{playerHealth.CurrentArmor -= Damage;}
         
     }
+
+    void OnCollisionStay(Collision other)
+    {
+        if(other.gameObject.tag == "Player"){
+            enemyAnimator.SetBool("Walk",false);
+            enemyAnimator.SetTrigger("Attack1");
+        }        
+    }
+    
+    void OnCollisionExit(Collision other)
+    {
+        if(other.gameObject.tag == "Player"){
+            enemyAnimator.ResetTrigger("Attack1");
+            enemyAnimator.SetBool("Walk",true);
+        }        
+    }
+    
 }
