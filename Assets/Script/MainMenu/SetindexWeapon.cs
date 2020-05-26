@@ -18,7 +18,7 @@ public class SetindexWeapon : MonoBehaviour
             n.TimetoReload = n.startTimetoReload;
             n.maxAmmo = n.startAmmo;
             n.currentAmmo = n.startAmmo;
-            n.Level = 1;
+            n.Level = 0;
         }
     }
 

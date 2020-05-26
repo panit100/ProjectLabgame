@@ -2248,6 +2248,7 @@ GameObject:
   - component: {fileID: 1423936649}
   - component: {fileID: 1423936648}
   - component: {fileID: 1423936647}
+  - component: {fileID: 1423936650}
   m_Layer: 5
   m_Name: ButtonP
   m_TagString: Untagged
@@ -2329,6 +2330,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1423936650}
+        m_MethodName: indexWeapon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1423936648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2366,6 +2378,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423936645}
   m_CullTransparentMesh: 0
+--- !u!114 &1423936650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423936645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f69caccaca3ab84db3cbacd2e2bfd5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponObjects:
+  - {fileID: 11400000, guid: e9f7368f55bf5c942a95bb0a279fddb6, type: 2}
+  - {fileID: 11400000, guid: acd221a8cc455fc4087c082e79e5a61d, type: 2}
+  - {fileID: 11400000, guid: cc965ee92ca424b449d13dfdae724988, type: 2}
+  - {fileID: 11400000, guid: 04e4a9f2601562f4facdc4a0840c3714, type: 2}
+  - {fileID: 11400000, guid: 2389afde5b7f5fe469ba2b77fcb2acff, type: 2}
 --- !u!1 &1461854339
 GameObject:
   m_ObjectHideFlags: 0

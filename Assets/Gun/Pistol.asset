@@ -21,10 +21,10 @@ MonoBehaviour:
   startFireRate: 0.7
   minFireRate: 0.2
   maxFireRate: 0.7
-  damage: 12
-  startDamge: 7
-  maxDamage: 30
-  startMaxDamage: 25
+  damage: 10
+  startDamge: 10
+  maxDamage: 20
+  startMaxDamage: 20
   UpgradeMaxDamage: 5
   range: 5
   startRange: 5
@@ -37,5 +37,5 @@ MonoBehaviour:
   startTimetoReload: 1
   minTimetoReload: 0.5
   maxTimetoReload: 1
-  Level: 1
+  Level: 0
   maxLevel: 5
