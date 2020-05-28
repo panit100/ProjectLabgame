@@ -196,7 +196,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6463180304325917420}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.5, y: 1, z: 9}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4108753894727426162}
@@ -279,9 +279,9 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   Damage: 10
-  moneyObject: {fileID: 25787656355895062, guid: 94c609db2dea05a4faf23a27991f0152,
-    type: 3}
+  DropObject: []
   enemyHealthBar: {fileID: 5999093777917358417}
+  isDie: 0
 --- !u!54 &6463180304325917412
 Rigidbody:
   m_ObjectHideFlags: 0
