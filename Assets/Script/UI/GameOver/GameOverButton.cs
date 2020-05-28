@@ -7,7 +7,7 @@ public class GameOverButton : MonoBehaviour
 {
     // Start is called before the first frame update
     public void Restart(){
-    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    SceneManager.LoadScene(1);
     }
 
     public void Maimenu(){

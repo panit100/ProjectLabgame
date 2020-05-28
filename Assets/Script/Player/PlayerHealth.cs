@@ -89,6 +89,7 @@ public class PlayerHealth : MonoBehaviour
             animator.SetTrigger("isDying");
             isDie = true;
             GameoverUI.SetActive(true);
+            
             //Invoke("Restart",restartDelay);
         }
     }
