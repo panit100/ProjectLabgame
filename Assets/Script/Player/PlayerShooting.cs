@@ -123,6 +123,7 @@ public class PlayerShooting : MonoBehaviour
                 enemyHealth.TakeDamage(weapons[currentWeapon].damage);
 
                 if(weapons[currentWeapon].weaponName == "RPG"){
+                    Explosive();
                     explosionScript.Detonate(shootHit.point);
                 }
             }
@@ -130,6 +131,7 @@ public class PlayerShooting : MonoBehaviour
         }
         else{
             if(weapons[currentWeapon].weaponName == "RPG"){
+                    Explosive();
                     explosionScript.Detonate(shootRay.origin+shootRay.direction * weapons[currentWeapon].range);
                 }
             gunLine.SetPosition(1,shootRay.origin+shootRay.direction * weapons[currentWeapon].range);
@@ -174,5 +176,12 @@ public class PlayerShooting : MonoBehaviour
         isReloading = false;
         ReloadUI.SetActive(false);
 
+    }
+    public void Explosive(){
+        var ps = GetComponentsInChildren<ParticleSystem>();
+        
+            foreach(var p in ps){
+                p.Play();
+            }
     }
 }
