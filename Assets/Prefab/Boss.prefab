@@ -706,8 +706,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1146259, y: 3.0103755, z: 2.7024837}
-  m_Center: {x: -0.0033713183, y: 1.497402, z: 0.32679528}
+  m_Size: {x: 0.80859554, y: 3.0103755, z: 2.232871}
+  m_Center: {x: -0.0033713183, y: 1.497402, z: 0.2384646}
 --- !u!114 &2844635203173549780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -737,7 +737,6 @@ MonoBehaviour:
   currentHealth: 0
   Damage: 15
   DropObject:
-  - {fileID: 25787656355895062, guid: 94c609db2dea05a4faf23a27991f0152, type: 3}
   - {fileID: 8375548293324460277, guid: 14a660506efc3be4eadc5371aa0fe1e8, type: 3}
   - {fileID: 8127766972196277430, guid: 0f0d46f8090d76d4a8992bc667ff084e, type: 3}
   enemyHealthBar: {fileID: 2844635203062893534}

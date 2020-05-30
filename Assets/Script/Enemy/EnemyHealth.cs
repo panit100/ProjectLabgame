@@ -11,15 +11,20 @@ public class EnemyHealth : MonoBehaviour
     public EnemyHealthBar enemyHealthBar;
     GameObject player;
     PlayerHealth playerHealth;
+    PlayerMoney playerMoney;
     Animator enemyAnimator;
     PathFinding pathFinding;
+    ExplosionScript explosionScript;
     public bool isDie = false;
     
+    private void Awake() {
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerHealth = player.GetComponent<PlayerHealth>();
+        playerMoney = player.GetComponent<PlayerMoney>();   
+    }
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        playerHealth = player.GetComponent<PlayerHealth>();
         currentHealth = maxHealth;
         enemyHealthBar.SetMaxHealth(maxHealth);
         enemyAnimator = GetComponent<Animator>();
@@ -45,17 +50,19 @@ public class EnemyHealth : MonoBehaviour
 
     void Death(){
         Dropitem();
+        playerMoney.addPlayerMoney();
+        if(gameObject.GetComponent<ExplosionScript>() != null){
+            gameObject.GetComponent<ExplosionScript>().Detonate(transform.position);
+        }
         Destroy(gameObject);
     }
 
     private void Dropitem(){
         int isDrop = Random.Range(1,10);
-        if(isDrop == 1||isDrop == 2||isDrop == 3||isDrop == 4)
+        if(isDrop == 1)
         Instantiate(DropObject[0],transform.position,DropObject[0].transform.rotation);
-        if(isDrop == 5)
-        Instantiate(DropObject[1],transform.position,DropObject[1].transform.rotation);    
-        if(isDrop == 6)
-        Instantiate(DropObject[2],transform.position,DropObject[2].transform.rotation);    
+        if(isDrop == 2)
+        Instantiate(DropObject[1],transform.position,DropObject[1].transform.rotation);      
         
     }
 

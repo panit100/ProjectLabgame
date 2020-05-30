@@ -23,6 +23,7 @@ public class PlayerShooting : MonoBehaviour
     public bool isReloading = false;
     Coroutine reloadAmmo;
     public GameObject ReloadUI;
+    ExplosionScript explosionScript;
 
     void Awake()
     {
@@ -31,6 +32,8 @@ public class PlayerShooting : MonoBehaviour
         gunParticles = GetComponent<ParticleSystem>();
         gunLine = GetComponent<LineRenderer>();
         gunLight = GetComponent<Light>();
+
+        explosionScript = GetComponent<ExplosionScript>();
     }
 
     /* private void SetColors(Color color){
@@ -118,10 +121,17 @@ public class PlayerShooting : MonoBehaviour
 
             if(shootHit.collider != null){
                 enemyHealth.TakeDamage(weapons[currentWeapon].damage);
+
+                if(weapons[currentWeapon].weaponName == "RPG"){
+                    explosionScript.Detonate(shootHit.point);
+                }
             }
             gunLine.SetPosition(1,shootHit.point);
         }
         else{
+            if(weapons[currentWeapon].weaponName == "RPG"){
+                    explosionScript.Detonate(shootRay.origin+shootRay.direction * weapons[currentWeapon].range);
+                }
             gunLine.SetPosition(1,shootRay.origin+shootRay.direction * weapons[currentWeapon].range);
         }
         weapons[currentWeapon].currentAmmo--;

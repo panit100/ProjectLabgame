@@ -728,7 +728,6 @@ MonoBehaviour:
   currentHealth: 0
   Damage: 5
   DropObject:
-  - {fileID: 25787656355895062, guid: 94c609db2dea05a4faf23a27991f0152, type: 3}
   - {fileID: 8375548293324460277, guid: 14a660506efc3be4eadc5371aa0fe1e8, type: 3}
   - {fileID: 8127766972196277430, guid: 0f0d46f8090d76d4a8992bc667ff084e, type: 3}
   enemyHealthBar: {fileID: 1550215523626346976}
