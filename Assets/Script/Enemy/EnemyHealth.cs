@@ -17,11 +17,13 @@ public class EnemyHealth : MonoBehaviour
     ExplosionScript explosionScript;
     public bool isDie = false;
     Collider objectCollider;
+    AudioSource audioSource;
     
     private void Awake() {
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
         playerMoney = player.GetComponent<PlayerMoney>();   
+        
     }
 
     void Start()
@@ -29,7 +31,7 @@ public class EnemyHealth : MonoBehaviour
         currentHealth = maxHealth;
         enemyHealthBar.SetMaxHealth(maxHealth);
         enemyAnimator = GetComponent<Animator>();
-        
+        audioSource = GetComponent<AudioSource>();   
     }
 
     void Update()
@@ -43,7 +45,7 @@ public class EnemyHealth : MonoBehaviour
         if(currentHealth <= 0){
             if(!isDie)
             enemyAnimator.SetTrigger("Die");
-
+            audioSource.mute = true;
             isDie = true;
             Invoke("Death",3);
         }

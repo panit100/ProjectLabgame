@@ -25,6 +25,7 @@ public class PlayerShooting : MonoBehaviour
     public GameObject ReloadUI;
     ExplosionScript explosionScript;
     public GameObject ExplosiveParticle;
+    AudioSource audioSource;
 
     void Awake()
     {
@@ -35,6 +36,7 @@ public class PlayerShooting : MonoBehaviour
         gunLight = GetComponent<Light>();
 
         explosionScript = GetComponent<ExplosionScript>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     /* private void SetColors(Color color){
@@ -116,6 +118,8 @@ public class PlayerShooting : MonoBehaviour
         shootRay.origin = transform.position;
         shootRay.direction = transform.forward;
 
+        audioSource.Play();
+
         if(Physics.Raycast (shootRay,out shootHit,weapons[currentWeapon].range,shootableMask)){
             
             EnemyHealth enemyHealth = shootHit.collider.GetComponent<EnemyHealth>();
@@ -181,5 +185,6 @@ public class PlayerShooting : MonoBehaviour
     public void Explosive(Vector3 explosivePosition){
                 ExplosiveParticle.transform.position = explosivePosition;
                 ExplosiveParticle.GetComponent<ParticleSystem>().Play();
+                ExplosiveParticle.GetComponent<AudioSource>().Play();
         }
 }

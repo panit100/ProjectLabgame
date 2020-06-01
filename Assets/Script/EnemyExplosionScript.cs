@@ -8,8 +8,16 @@ public class EnemyExplosionScript : MonoBehaviour
     public float radius = 5f;
     public float upForce = 1f;
     public int Damage;
+    GameObject ExplosiveParticle;
+
+    void Start()
+    {
+        ExplosiveParticle = GameObject.Find("Explosion2");        
+    }
 
     public void Detonate(Vector3 explosionPosition){
+        Explosive(transform.position);
+
         Collider[] colliders = Physics.OverlapSphere(explosionPosition,radius);
         foreach(Collider hit in colliders){
             Rigidbody rb = hit.GetComponent<Rigidbody>();
@@ -34,5 +42,11 @@ public class EnemyExplosionScript : MonoBehaviour
 
         }
     }
+
+    public void Explosive(Vector3 explosivePosition){
+                ExplosiveParticle.transform.position = transform.position;
+                ExplosiveParticle.GetComponent<ParticleSystem>().Play();
+                ExplosiveParticle.GetComponent<AudioSource>().Play();
+        }
 
 }

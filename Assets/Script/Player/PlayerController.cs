@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     Vector3 movement;
     Rigidbody playerRigidbody;
     Animator animator;
+    AudioSource audioSource;
     int floorMask; // the layer that player mouse must be on it
     float camRayLength = 100f; 
 
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
         floorMask = LayerMask.GetMask("Floor"); // reference the layer
         playerRigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -42,8 +44,11 @@ public class PlayerController : MonoBehaviour
     void anim(){
         if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S)){
             animator.SetBool("isWalk",true);
+            audioSource.mute = false;
+
         }else{
             animator.SetBool("isWalk",false);
+            audioSource.mute = true;
         }
     }
 
@@ -65,4 +70,5 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    
 }

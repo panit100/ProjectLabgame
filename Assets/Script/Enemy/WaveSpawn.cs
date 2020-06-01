@@ -127,7 +127,7 @@ public class WaveSpawn : MonoBehaviour
     }
 
     void IncressEnemyStatus(Wave _wave){
-        _wave.enemy.GetComponent<EnemyHealth>().maxHealth += 5;
-        _wave.enemy.GetComponent<EnemyHealth>().Damage += 5;
+        _wave.enemy.gameObject.GetComponent<EnemyHealth>().maxHealth += 5;
+        _wave.enemy.gameObject.GetComponent<EnemyHealth>().Damage += 5;
     }
 }
