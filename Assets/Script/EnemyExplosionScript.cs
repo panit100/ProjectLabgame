@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExplosionScript : MonoBehaviour
+public class EnemyExplosionScript : MonoBehaviour
 {
     public float power = 10f;
     public float radius = 5f;
     public float upForce = 1f;
-    public int DamageExplosion = 10; 
+    public int Damage;
+
     public void Detonate(Vector3 explosionPosition){
         Collider[] colliders = Physics.OverlapSphere(explosionPosition,radius);
         foreach(Collider hit in colliders){
@@ -15,10 +16,22 @@ public class ExplosionScript : MonoBehaviour
             if(rb != null){
                 rb.AddExplosionForce(power,explosionPosition,radius,upForce,ForceMode.Impulse);
             }
+            Damage = gameObject.GetComponent<EnemyHealth>().Damage/2;
+
+            if(hit.gameObject.GetComponent<EnemyHealth>() != null){
             EnemyHealth enemyHealth = hit.GetComponent<EnemyHealth>();
             if(enemyHealth != null){
-                enemyHealth.currentHealth -= DamageExplosion;
+                enemyHealth.currentHealth -= Damage;
             }
+            }else if(hit.gameObject.GetComponent<PlayerHealth>() != null){
+            PlayerHealth playerHealth = hit.GetComponent<PlayerHealth>();
+                if(playerHealth != null){
+                    if(playerHealth.CurrentArmor <= 0){
+                        playerHealth.CurrentHealth -= Damage;}
+                    else{playerHealth.CurrentArmor -= Damage;}
+            }
+            }
+
         }
     }
 

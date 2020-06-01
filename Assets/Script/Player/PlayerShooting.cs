@@ -24,6 +24,7 @@ public class PlayerShooting : MonoBehaviour
     Coroutine reloadAmmo;
     public GameObject ReloadUI;
     ExplosionScript explosionScript;
+    public GameObject ExplosiveParticle;
 
     void Awake()
     {
@@ -123,7 +124,7 @@ public class PlayerShooting : MonoBehaviour
                 enemyHealth.TakeDamage(weapons[currentWeapon].damage);
 
                 if(weapons[currentWeapon].weaponName == "RPG"){
-                    Explosive();
+                    Explosive(shootHit.point);
                     explosionScript.Detonate(shootHit.point);
                 }
             }
@@ -131,7 +132,7 @@ public class PlayerShooting : MonoBehaviour
         }
         else{
             if(weapons[currentWeapon].weaponName == "RPG"){
-                    Explosive();
+                    Explosive(shootRay.origin+shootRay.direction * weapons[currentWeapon].range);
                     explosionScript.Detonate(shootRay.origin+shootRay.direction * weapons[currentWeapon].range);
                 }
             gunLine.SetPosition(1,shootRay.origin+shootRay.direction * weapons[currentWeapon].range);
@@ -177,11 +178,8 @@ public class PlayerShooting : MonoBehaviour
         ReloadUI.SetActive(false);
 
     }
-    public void Explosive(){
-        var ps = GetComponentsInChildren<ParticleSystem>();
-        
-            foreach(var p in ps){
-                p.Play();
-            }
-    }
+    public void Explosive(Vector3 explosivePosition){
+                ExplosiveParticle.transform.position = explosivePosition;
+                ExplosiveParticle.GetComponent<ParticleSystem>().Play();
+        }
 }

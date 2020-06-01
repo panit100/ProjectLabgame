@@ -16,6 +16,7 @@ public class EnemyHealth : MonoBehaviour
     PathFinding pathFinding;
     ExplosionScript explosionScript;
     public bool isDie = false;
+    Collider objectCollider;
     
     private void Awake() {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -51,8 +52,8 @@ public class EnemyHealth : MonoBehaviour
     void Death(){
         Dropitem();
         playerMoney.addPlayerMoney();
-        if(gameObject.GetComponent<ExplosionScript>() != null){
-            gameObject.GetComponent<ExplosionScript>().Detonate(transform.position);
+        if(gameObject.GetComponent<EnemyExplosionScript>() != null){
+            gameObject.GetComponent<EnemyExplosionScript>().Detonate(transform.position);
         }
         Destroy(gameObject);
     }

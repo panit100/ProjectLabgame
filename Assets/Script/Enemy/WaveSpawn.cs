@@ -60,7 +60,12 @@ public class WaveSpawn : MonoBehaviour
 
     void WaveCompleted(){
         Debug.Log("Wave Complete");
+        waves[3].count = 0;
         waveIndex += 1;
+        if(waveIndex % 10 == 0){
+            foreach(Wave n in waves)
+            IncressEnemyStatus(n);
+        }
         addEnemy();
         state = SpawnState.Counting;
         waveCountdown = timeBetweenWaves;
@@ -117,9 +122,12 @@ public class WaveSpawn : MonoBehaviour
         }
 
         if(waveIndex % 10 == 0){
-            waves[3].count += 1;
+            waves[3].count += waveIndex/10;
         }
+    }
 
-        
+    void IncressEnemyStatus(Wave _wave){
+        _wave.enemy.GetComponent<EnemyHealth>().maxHealth += 5;
+        _wave.enemy.GetComponent<EnemyHealth>().Damage += 5;
     }
 }

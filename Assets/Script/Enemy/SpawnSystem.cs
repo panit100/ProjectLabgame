@@ -37,13 +37,7 @@ public class SpawnSystem : MonoBehaviour
     }
 
     void SpawnEnemy(){
-        
-
         int spawnObjectIndex = Random.Range(0,spawnObject.Length);
-
-
         Instantiate(spawnObject[spawnObjectIndex],transform.position,Quaternion.identity);
-
-        
     }
 }
