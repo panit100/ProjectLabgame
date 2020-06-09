@@ -1620,7 +1620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 150
-  radius: 30
+  radius: 20
   upForce: 0
   Damage: 0
 --- !u!82 &2100013558

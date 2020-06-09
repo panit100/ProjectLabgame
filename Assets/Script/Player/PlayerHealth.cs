@@ -22,7 +22,7 @@ public class PlayerHealth : MonoBehaviour
     public bool isRegen = false;
     public float TimeRegen = 5f;
     public float CurrentTimeRegen = 0;
-    public bool isDie = false;
+    public static bool isDie = false;
 
     public GameObject GameoverUI;
     void Start()
@@ -88,15 +88,15 @@ public class PlayerHealth : MonoBehaviour
             if(!isDie)
             animator.SetTrigger("isDying");
             isDie = true;
-            GameoverUI.SetActive(true);
-            
-            //Invoke("Restart",restartDelay);
+            Invoke("PauseGame",2);
         }
     }
 
-    /*void Restart(){
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }*/
+    void PauseGame(){
+        Time.timeScale = 0f;
+        GameoverUI.SetActive(true);
+        Cursor.visible = true;
+    }
 
     void CombatRegen(){
         if(isRegen){

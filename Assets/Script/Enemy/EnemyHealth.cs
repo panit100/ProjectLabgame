@@ -36,8 +36,10 @@ public class EnemyHealth : MonoBehaviour
 
     void Update()
     {
+        if(PlayerHealth.isDie){
+            audioSource.enabled = false;
+        }        
     }
-
     public void TakeDamage(int amount){
         currentHealth -= amount;
         enemyHealthBar.SetHealth(currentHealth);

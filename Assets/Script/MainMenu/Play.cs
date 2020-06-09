@@ -8,5 +8,6 @@ public class Play : MonoBehaviour
     public void Stratgame(){
         SceneManager.LoadScene(1);
         Time.timeScale = 1f;
+        Cursor.visible = false;
     }
 }
