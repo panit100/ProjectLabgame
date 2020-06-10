@@ -23,15 +23,14 @@ public class EnemyHealth : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
         playerMoney = player.GetComponent<PlayerMoney>();   
-        
+        audioSource = GetComponent<AudioSource>();   
+        enemyAnimator = GetComponent<Animator>();        
     }
 
     void Start()
     {
         currentHealth = maxHealth;
         enemyHealthBar.SetMaxHealth(maxHealth);
-        enemyAnimator = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();   
     }
 
     void Update()
@@ -39,6 +38,11 @@ public class EnemyHealth : MonoBehaviour
         if(PlayerHealth.isDie){
             audioSource.enabled = false;
         }        
+
+        if(Time.timeScale == 0f){
+            audioSource.enabled = false;
+        }
+        else audioSource.enabled = true;
     }
     public void TakeDamage(int amount){
         currentHealth -= amount;

@@ -1620,9 +1620,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 150
-  radius: 20
+  radius: 15
   upForce: 0
-  Damage: 0
 --- !u!82 &2100013558
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1632,7 +1631,8 @@ AudioSource:
   m_GameObject: {fileID: 141654664574736465}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -6083603146660578219, guid: 72d15cf2bff5ce944878e9f6d965c302,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 5165908ee5ffc2e46b5835fafa0dd3d1, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -2135,6 +2135,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5383627206606956878, guid: d82670cdee510574da60e90b88bb6262,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -6083603146660578219, guid: 72d15cf2bff5ce944878e9f6d965c302,
+        type: 2}
     - target: {fileID: 7806890645584764195, guid: d82670cdee510574da60e90b88bb6262,
         type: 3}
       propertyPath: m_Name

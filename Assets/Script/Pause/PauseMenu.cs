@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject PauseMenuUI;
     public GameObject ShopUI;
+    public GameObject OptionUI;
  
     void Update()
     {
@@ -15,8 +16,13 @@ public class PauseMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if(ShopUI.activeInHierarchy){
-            CloseShop();
-            return;
+                ShopUI.SetActive(false);
+                return;
+            }
+            if(OptionUI.activeInHierarchy){
+                OptionUI.SetActive(false);
+                PauseMenuUI.SetActive(true);
+                return;
             }
             if(Time.timeScale == 1f){
             GameIsPaused = false;
@@ -48,10 +54,6 @@ public class PauseMenu : MonoBehaviour
         Cursor.visible = true;
         GameIsPaused = true;
     }
-    public void Setting() 
-    {
-        //add setting
-    }
 
     public void LoadMenu() 
     {
@@ -64,7 +66,4 @@ public class PauseMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void CloseShop(){
-        ShopUI.SetActive(false);
-    }
 }

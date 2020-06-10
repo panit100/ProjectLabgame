@@ -7,7 +7,7 @@ public class EnemyExplosionScript : MonoBehaviour
     public float power = 10f;
     public float radius = 5f;
     public float upForce = 1f;
-    public int Damage;
+    int Damage;
     GameObject ExplosiveParticle;
 
     void Start()
