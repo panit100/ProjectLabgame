@@ -5794,7 +5794,6 @@ MonoBehaviour:
   isRegen: 0
   TimeRegen: 5
   CurrentTimeRegen: 0
-  isDie: 0
   GameoverUI: {fileID: 0}
 --- !u!65 &2469732513694221149
 BoxCollider:

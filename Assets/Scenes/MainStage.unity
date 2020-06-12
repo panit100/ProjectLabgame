@@ -447,13 +447,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.73170733, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 58ce52f5482e61344a663805465eb46d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7e278216aebb1e64c93b6feec9299b1c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3277,7 +3277,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: ac524ed32c9ec1c47abb2fabd3d65988, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6789,19 +6789,19 @@ MonoBehaviour:
   - name: enemy1
     enemy: {fileID: 1553041426112829641, guid: 33217b60802962f41ad7017a5943da92, type: 3}
     count: 1
-    rate: 5
+    rate: 30
   - name: enemy2
     enemy: {fileID: 144095613411333787, guid: 5baa3c543194a8940b6c6d03da4dadd1, type: 3}
     count: 0
-    rate: 10
+    rate: 30
   - name: enemy3
     enemy: {fileID: 1375014408636220536, guid: c30b84e912ac7504e80522e3f7953fb8, type: 3}
     count: 0
-    rate: 10
+    rate: 30
   - name: Boss
     enemy: {fileID: 2844635202867112909, guid: 8beda14e0e8d4464795d8144ac7b3af4, type: 3}
     count: 0
-    rate: 10
+    rate: 30
   SpawnPoint:
   - {fileID: 2004164942}
   - {fileID: 1386745273}
@@ -8150,8 +8150,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4290445056
-  m_fontColor: {r: 0, g: 1, b: 0.7294118, a: 1}
+    rgba: 4293519862
+  m_fontColor: {r: 0.9647059, g: 0.9137255, b: 0.9137255, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -11084,7 +11084,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1813242f90072524e81dea83ba757314, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c128202fc60106647bd4e37ca0a8f4b4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11375,7 +11375,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 941429ff4956ca24988066bd9ebff117, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -14645,7 +14645,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6447eab4bcaae6846a853d91c8f1efee, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0d04c2a5459466846b2474fe1598b68e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -17747,6 +17747,83 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1987498336}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 611042447}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 894127631}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 997178240}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1272411767}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2078324223}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1049533262}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1218401831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18086,7 +18163,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1813242f90072524e81dea83ba757314, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c128202fc60106647bd4e37ca0a8f4b4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -18513,7 +18590,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 37d23e433a5bc3049baed7d3abdcd226, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c50fcc2038510b743a0b1f6065093671, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -18612,6 +18689,27 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 66926925}
     m_Modifications:
+    - target: {fileID: 143133962204148380, guid: 81d842f3c31d01f4f9fd8e317b7ec606,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300012, guid: 5163ae49a0de665458bba61cd20c99b1,
+        type: 3}
+    - target: {fileID: 143133962204148380, guid: 81d842f3c31d01f4f9fd8e317b7ec606,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.88235295
+      objectReference: {fileID: 0}
+    - target: {fileID: 143133962204148380, guid: 81d842f3c31d01f4f9fd8e317b7ec606,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.39215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 143133962204148380, guid: 81d842f3c31d01f4f9fd8e317b7ec606,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.15686275
+      objectReference: {fileID: 0}
     - target: {fileID: 143133962204148383, guid: 81d842f3c31d01f4f9fd8e317b7ec606,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -18765,7 +18863,7 @@ PrefabInstance:
     - target: {fileID: 143133963346939584, guid: 81d842f3c31d01f4f9fd8e317b7ec606,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 143133963346939584, guid: 81d842f3c31d01f4f9fd8e317b7ec606,
         type: 3}
@@ -18775,37 +18873,37 @@ PrefabInstance:
     - target: {fileID: 143133963346939584, guid: 81d842f3c31d01f4f9fd8e317b7ec606,
         type: 3}
       propertyPath: m_fontColor.r
-      value: 1
+      value: 0.88235295
       objectReference: {fileID: 0}
     - target: {fileID: 143133963346939584, guid: 81d842f3c31d01f4f9fd8e317b7ec606,
         type: 3}
       propertyPath: m_fontColor.g
-      value: 0.6443301
+      value: 0.39215687
       objectReference: {fileID: 0}
     - target: {fileID: 143133963346939584, guid: 81d842f3c31d01f4f9fd8e317b7ec606,
         type: 3}
       propertyPath: m_fontColor.b
-      value: 0
+      value: 0.15686275
       objectReference: {fileID: 0}
     - target: {fileID: 143133963346939584, guid: 81d842f3c31d01f4f9fd8e317b7ec606,
         type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4278232319
+      value: 4280837345
       objectReference: {fileID: 0}
     - target: {fileID: 143133963346939584, guid: 81d842f3c31d01f4f9fd8e317b7ec606,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 143133963346939584, guid: 81d842f3c31d01f4f9fd8e317b7ec606,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 143133963346939584, guid: 81d842f3c31d01f4f9fd8e317b7ec606,
         type: 3}
       propertyPath: m_textInfo.pageCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 143133963346939587, guid: 81d842f3c31d01f4f9fd8e317b7ec606,
         type: 3}
@@ -18837,6 +18935,27 @@ PrefabInstance:
       propertyPath: playerShooting
       value: 
       objectReference: {fileID: 221039134}
+    - target: {fileID: 143133963460095565, guid: 81d842f3c31d01f4f9fd8e317b7ec606,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.88235295
+      objectReference: {fileID: 0}
+    - target: {fileID: 143133963460095565, guid: 81d842f3c31d01f4f9fd8e317b7ec606,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.39215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 143133963460095565, guid: 81d842f3c31d01f4f9fd8e317b7ec606,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.15686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 143133963460095565, guid: 81d842f3c31d01f4f9fd8e317b7ec606,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300028, guid: 6674e8c43c63e4f4184cbd009379498d,
+        type: 3}
     - target: {fileID: 143133963460095567, guid: 81d842f3c31d01f4f9fd8e317b7ec606,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -21351,7 +21470,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6447eab4bcaae6846a853d91c8f1efee, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0d04c2a5459466846b2474fe1598b68e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -22588,8 +22707,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4290445056
-  m_fontColor: {r: 0, g: 1, b: 0.7294118, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -22735,7 +22854,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 37d23e433a5bc3049baed7d3abdcd226, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c50fcc2038510b743a0b1f6065093671, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -24130,7 +24249,7 @@ MonoBehaviour:
   m_MinValue: -60
   m_MaxValue: 0
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -24695,8 +24814,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4290445056
-  m_fontColor: {r: 0, g: 1, b: 0.7294118, a: 1}
+    rgba: 4293519862
+  m_fontColor: {r: 0.9647059, g: 0.9137255, b: 0.9137255, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -25025,7 +25144,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 58ce52f5482e61344a663805465eb46d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7e278216aebb1e64c93b6feec9299b1c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -25392,7 +25511,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: b043e64718a6008419be404390806580, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -26697,7 +26816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.7294118, a: 1}
+  m_Color: {r: 0.15294118, g: 0.12941177, b: 0.12941177, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -28884,7 +29003,7 @@ MonoBehaviour:
   m_MinValue: -60
   m_MaxValue: 0
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:

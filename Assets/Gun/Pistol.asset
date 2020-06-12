@@ -16,7 +16,7 @@ MonoBehaviour:
   cost: 100
   startCost: 100
   description: Pistol is a basic gun.Everyone can use it.Low damage and FireRate.
-  sprite: {fileID: 21300028, guid: 0bd96f6f4899f644ea1ffd9b4735a5e6, type: 3}
+  sprite: {fileID: 21300028, guid: 6674e8c43c63e4f4184cbd009379498d, type: 3}
   fireRate: 0.7
   startFireRate: 0.7
   minFireRate: 0.2
@@ -29,7 +29,7 @@ MonoBehaviour:
   range: 5
   startRange: 5
   maxRange: 20
-  currentAmmo: 6
+  currentAmmo: 5
   startAmmo: 6
   maxAmmo: 6
   UpgradeAmmo: 15
