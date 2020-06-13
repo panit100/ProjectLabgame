@@ -95,7 +95,7 @@ public class WaveSpawn : MonoBehaviour
         //spawn
         for(int i = 0; i < _wave.count; i++ ){
             SpawnEnemy(_wave.enemy);
-            yield return new WaitForSeconds(1f/_wave.rate);
+            yield return new WaitForSeconds(_wave.rate);
         }
         
         state = SpawnState.Waiting;
