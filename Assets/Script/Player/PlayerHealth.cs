@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
     public HealthBar healthBar;
     public ArmorBar armorBar;
     Animator animator;
+    AudioSource audio;
     public PlayerController playerController;
 
     public bool isRegen = false;
@@ -28,6 +30,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        audio = GetComponent<AudioSource>();
         Scene scene = SceneManager.GetActiveScene();
         
         CurrentHealth = MaxHealth;
@@ -88,6 +91,7 @@ public class PlayerHealth : MonoBehaviour
             if(!isDie)
             animator.SetTrigger("isDying");
             isDie = true;
+            audio.Stop();
             Invoke("PauseGame",2);
         }
     }

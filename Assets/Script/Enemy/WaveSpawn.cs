@@ -29,6 +29,7 @@ public class WaveSpawn : MonoBehaviour
     public SpawnState state = SpawnState.Counting;
     public TextMeshProUGUI TextWave;
     public AudioSource[] BGMusic;
+    public TextMeshProUGUI TimeCount;
 
     private void Start() {
        
@@ -40,6 +41,7 @@ public class WaveSpawn : MonoBehaviour
         if(state == SpawnState.Waiting){
                 if(!EnemyIsAlive()){
                     WaveCompleted();
+                    TimeCount.gameObject.SetActive(true);
                 }else{
                     return;
                 }
@@ -48,6 +50,7 @@ public class WaveSpawn : MonoBehaviour
         TextWave.text = "Wave " + waveIndex;
 
         if(waveCountdown <= 0){
+            TimeCount.gameObject.SetActive(false);
             if(state != SpawnState.Spawning){
                 foreach(Wave n in waves){
                 StartCoroutine(SpawnWave(n));
@@ -56,6 +59,7 @@ public class WaveSpawn : MonoBehaviour
         }
         else{
             waveCountdown -= Time.deltaTime;
+            TimeCount.text = "Next Wave in " + waveCountdown.ToString("#.##");
         }
     }
 

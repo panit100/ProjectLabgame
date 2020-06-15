@@ -5024,7 +5024,8 @@ AudioSource:
   m_GameObject: {fileID: 513686887801566806}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -6083603146660578219, guid: 72d15cf2bff5ce944878e9f6d965c302,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: a8c266ba9092aef419f8f0d2cae0365b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -5124,7 +5125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 150
-  radius: 30
+  radius: 15
   upForce: 0
   DamageExplosion: 30
 --- !u!1 &513686887806733312
@@ -5817,10 +5818,11 @@ AudioSource:
   m_GameObject: {fileID: 513686887806733344}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -6083603146660578219, guid: 72d15cf2bff5ce944878e9f6d965c302,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: e42559409c51a9242bebab6bf0367a59, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 1
@@ -10233,6 +10235,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5383627206606956878, guid: d82670cdee510574da60e90b88bb6262,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -6083603146660578219, guid: 72d15cf2bff5ce944878e9f6d965c302,
+        type: 2}
     - target: {fileID: 7806890645584764195, guid: d82670cdee510574da60e90b88bb6262,
         type: 3}
       propertyPath: m_Name
