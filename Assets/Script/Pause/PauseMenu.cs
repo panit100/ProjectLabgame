@@ -9,7 +9,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject PauseMenuUI;
     public GameObject ShopUI;
     public GameObject OptionUI;
- 
+    public GameObject[] Button;
     void Update()
     {
         
@@ -17,6 +17,9 @@ public class PauseMenu : MonoBehaviour
         {
             if(ShopUI.activeInHierarchy){
                 ShopUI.SetActive(false);
+                foreach(GameObject n in Button){
+                    n.SetActive(true);
+                }
                 return;
             }
             if(OptionUI.activeInHierarchy){
