@@ -8,7 +8,7 @@ public class WaveSpawn : MonoBehaviour
     public enum SpawnState{Spawning , Waiting , Counting}
 
     [System.Serializable]
-    public class Wave {
+    public class Enemy {
         public string name;
         public Transform enemy;
         public int count;
@@ -16,7 +16,7 @@ public class WaveSpawn : MonoBehaviour
         
     }
 
-    public Wave[] waves;
+    public Enemy[] Enemys;
     public Transform[] SpawnPoint;
     public int nextWave = 1;
 
@@ -52,7 +52,7 @@ public class WaveSpawn : MonoBehaviour
         if(waveCountdown <= 0){
             TimeCount.gameObject.SetActive(false);
             if(state != SpawnState.Spawning){
-                foreach(Wave n in waves){
+                foreach(Enemy n in Enemys){
                 StartCoroutine(SpawnWave(n));
                 }  
             }
@@ -65,11 +65,11 @@ public class WaveSpawn : MonoBehaviour
 
     void WaveCompleted(){
         Debug.Log("Wave Complete");
-        waves[3].count = 0;
+        Enemys[3].count = 0;
         waveIndex += 1;
         NextBGMusic();
         if(waveIndex % 10 == 0){
-            foreach(Wave n in waves)
+            foreach(Enemy n in Enemys)
             IncressEnemyStatus(n);
         }
         addEnemy();
@@ -93,13 +93,13 @@ public class WaveSpawn : MonoBehaviour
 
     }
 
-    IEnumerator SpawnWave(Wave _wave){
+    IEnumerator SpawnWave(Enemy _Enemy){
         state = SpawnState.Spawning;
 
         //spawn
-        for(int i = 0; i < _wave.count; i++ ){
-            SpawnEnemy(_wave.enemy);
-            yield return new WaitForSeconds(_wave.rate);
+        for(int i = 0; i < _Enemy.count; i++ ){
+            SpawnEnemy(_Enemy.enemy);
+            yield return new WaitForSeconds(_Enemy.rate);
         }
         
         state = SpawnState.Waiting;
@@ -117,26 +117,26 @@ public class WaveSpawn : MonoBehaviour
     }
 
     void addEnemy(){
-        waves[0].count += 1;
+        Enemys[0].count += 1;
 
         if(waveIndex % 5 == 0){
-            waves[1].count += 1;
+            Enemys[1].count += 1;
         }
 
         if(waveIndex % 7 == 0){
-            waves[2].count += 1;
+            Enemys[2].count += 1;
         }
 
         if(waveIndex % 10 == 0){
-            waves[0].count /= 2;
+            Enemys[0].count /= 2;
             
-            waves[3].count += waveIndex/10;
+            Enemys[3].count += waveIndex/10;
         }
     }
 
-    void IncressEnemyStatus(Wave _wave){
-        _wave.enemy.gameObject.GetComponent<EnemyHealth>().maxHealth += 5;
-        _wave.enemy.gameObject.GetComponent<EnemyHealth>().Damage += 5;
+    void IncressEnemyStatus(Enemy _Enemy){
+        _Enemy.enemy.gameObject.GetComponent<EnemyHealth>().maxHealth += 5;
+        _Enemy.enemy.gameObject.GetComponent<EnemyHealth>().Damage += 5;
     }
 
     void NextBGMusic(){

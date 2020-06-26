@@ -25,7 +25,7 @@ public class PlayerHealth : MonoBehaviour
     public float TimeRegen = 5f;
     public float CurrentTimeRegen = 0;
     public static bool isDie = false;
-
+    
     public GameObject GameoverUI;
     void Start()
     {
